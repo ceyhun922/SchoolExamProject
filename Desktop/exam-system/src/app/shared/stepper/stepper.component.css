@@ -1,0 +1,45 @@
+.stepper-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+  width: auto;       /* 🔥 Exam səhifəsində genişlənməsinin qarşısını alır */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d6e2ff;
+  color: #1a73ff;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step.active .circle {
+  background: #1a73ff !important;
+  color: white !important;
+}
+
+.step.done .circle {
+  background: #1a73ff20; 
+  color: #1a73ff;
+}

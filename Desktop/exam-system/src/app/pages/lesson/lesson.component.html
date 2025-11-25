@@ -1,0 +1,36 @@
+<app-stepper></app-stepper>
+
+<div class="page-layout">
+  <div class="card">
+
+    <h2>Lesson</h2>
+
+    <div class="group">
+      <label>Lesson Code</label>
+      <input type="text" [(ngModel)]="lesson.lessonCode">
+    </div>
+
+    <div class="group">
+      <label>Lesson Name</label>
+      <input type="text" [(ngModel)]="lesson.lessonName">
+    </div>
+
+    <div class="group">
+      <label>Class Number</label>
+      <input type="number" [(ngModel)]="lesson.classNumber">
+    </div>
+
+    <div class="group">
+      <label>Teacher Name</label>
+      <input type="text" [(ngModel)]="lesson.teacherName">
+    </div>
+
+    <div class="group">
+      <label>Teacher Surname</label>
+      <input type="text" [(ngModel)]="lesson.teacherSurname">
+    </div>
+
+    <button (click)="save()">Submit</button>
+
+  </div>
+</div>

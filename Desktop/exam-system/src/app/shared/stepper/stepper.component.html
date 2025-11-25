@@ -1,0 +1,37 @@
+<div class="stepper-wrapper">
+
+  <div class="stepper">
+
+    <!-- STEP 1 -->
+    <div class="step"
+         [class.active]="isActiveStep(1)"
+         [class.done]="isDone(1)"
+         (click)="go(1)">
+      <span class="circle">{{ isDone(1) ? '✔' : '1' }}</span>
+      <p>Lesson</p>
+    </div>
+
+    <div class="line"></div>
+
+    <!-- STEP 2 -->
+    <div class="step"
+         [class.active]="isActiveStep(2)"
+         [class.done]="isDone(2)"
+         (click)="go(2)">
+      <span class="circle">{{ isDone(2) ? '✔' : '2' }}</span>
+      <p>Student</p>
+    </div>
+
+    <div class="line"></div>
+
+    <!-- STEP 3 -->
+    <div class="step"
+         [class.active]="isActiveStep(3)"
+         [class.done]="isDone(3)"
+         (click)="go(3)">
+      <span class="circle">{{ isDone(3) ? '✔' : '3' }}</span>
+      <p>Exam</p>
+    </div>
+
+  </div>
+</div>

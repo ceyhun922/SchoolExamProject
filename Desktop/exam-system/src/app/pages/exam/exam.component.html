@@ -1,0 +1,41 @@
+<app-stepper></app-stepper>
+
+<div class="page-layout">
+  <div class="card">
+
+    <h2>Exam</h2>
+
+    <div class="group">
+      <label>Lesson</label>
+      <select [(ngModel)]="exam.lessonId">
+        <option disabled value="0">Select lesson</option>
+        <option *ngFor="let l of lessons(); let i = index" [value]="i">
+          {{ l.lessonName }} ({{ l.lessonCode }})
+        </option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>Student</label>
+      <select [(ngModel)]="exam.studentId">
+        <option disabled value="0">Select student</option>
+        <option *ngFor="let s of students(); let i = index" [value]="i">
+          {{ s.studentNumber }} — {{ s.firstName }} {{ s.lastName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>Exam Date</label>
+      <input type="date" [(ngModel)]="exam.examDate">
+    </div>
+
+    <div class="group">
+      <label>Grade</label>
+      <input type="number" [(ngModel)]="exam.point">
+    </div>
+
+    <button (click)="save()">Submit</button>
+
+  </div>
+</div>
