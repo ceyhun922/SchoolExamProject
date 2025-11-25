@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <h2 class="text-center mt-4">Angular Stepper Tutorials</h2>
+    <div class="col-md-9 mx-auto">
+      <app-stepper [linearModeSelected]="false" #appStepper>
+        <cdk-step [label]="'Information'"> 
+          <app-information></app-information>
+        </cdk-step>
+        <cdk-step [label]="'Contact'">
+          <app-contact></app-contact>
+        </cdk-step>
+        <cdk-step [label]="'Security'">
+          <app-security></app-security>
+        </cdk-step>
+        <cdk-step [label]="'Finish'">
+          <app-finish></app-finish>
+        </cdk-step>
+      </app-stepper>
+    </div>
+  </div>
+</div>
+
