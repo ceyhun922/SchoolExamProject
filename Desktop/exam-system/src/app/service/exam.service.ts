@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Exam } from '../models/exam.model';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExamService {
 
-  exams: Exam[] = [];
+  exams = signal<any[]>([]);
 
-  addExam(exam: Exam) {
-    this.exams.push(exam);
+  addExam(exam: any) {
+    this.exams.update(list => [...list, exam]);
   }
 
   getExams() {
-    return this.exams;
+    return this.exams();
   }
 }

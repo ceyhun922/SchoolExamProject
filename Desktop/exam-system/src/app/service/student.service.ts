@@ -8,8 +8,13 @@ export class StudentService {
 
   students: Student[] = [];
 
+  constructor() { }
+
   addStudent(student: Student) {
-    this.students.push(student);
+    this.students.push({
+      ...student,
+      id: this.students.length + 1
+    });
   }
 
   getStudents() {
