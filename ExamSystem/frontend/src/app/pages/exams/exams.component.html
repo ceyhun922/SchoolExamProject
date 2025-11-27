@@ -1,0 +1,33 @@
+<h2 class="mb-4">İmtahanların Siyahısı</h2>
+<a routerLink="/exam/add" class="btn btn-primary my-3" >Elave Et</a>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="table-primary">
+      <tr>
+        <th>Dərs Kodu</th>
+        <th>Dərs Adı</th>
+        <th>Şagird No</th>
+        <th>Şagird</th>
+        <th>Müəllim</th>
+        <th>Tarix</th>
+        <th>Qiymət</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let exam of exams">
+        <td>{{ exam.lessonCode }}</td>
+        <td>{{ exam.lessonName }}</td>
+        <td>{{ exam.studentNumber }}</td>
+        <td>{{ exam.studentFirstName }} {{ exam.studentLastName }}</td>
+        <td>{{ exam.teacherFirstName }} {{ exam.teacherLastName }}</td>
+        <td>{{ exam.examDate | date:'dd.MM.yyyy' }}</td>
+        <td>{{ exam.grade }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="exams.length === 0" class="alert alert-info mt-3">
+  Hələ imtahan əlavə edilməyib...
+</div>

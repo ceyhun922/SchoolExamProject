@@ -1,0 +1,25 @@
+<h2 class="mb-4">Dərslərin Siyahısı</h2>
+<a routerLink="/lesson/add" class="btn btn-primary my-3" >Elave Et</a>
+<table class="table table-bordered table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th>Kod</th>
+      <th>Ad</th>
+      <th>Sinif</th>
+      <th>Müəllim</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of lessons">
+      <td>{{ item.lessonCode }}</td>
+      <td>{{ item.lessonName }}</td>
+      <td>{{ item.classNumber }}</td>
+      <td>{{ item.teacherName }} {{ item.teacherSurname }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="lessons.length === 0" class="alert alert-info mt-3">
+  Hələ dərs əlavə edilməyib...
+</div>

@@ -1,0 +1,42 @@
+<div class="mt-4">
+  <div class="ms-5">
+    <i class="fa fa-check-circle fa-5x" style="color: green;"></i>
+  </div>
+  <p class="mb-4">Qeydiyyat Əlavə Olundu!</p>
+</div>
+
+<div class="mt-4">
+  <h3 class="text-center mb-4">Yekun Məlumatlar</h3>
+
+  <div class="card p-4">
+
+    <h5>Dərs Məlumatı</h5>
+    <p><strong>Kod:</strong> {{ lesson.lessonCode }}</p>
+    <p><strong>Ad:</strong> {{ lesson.lessonName }}</p>
+    <p><strong>Sinif:</strong> {{ lesson.classNumber }}</p>
+    <p><strong>Müəllim:</strong> {{ lesson.teacherName }} {{ lesson.teacherSurname }}</p>
+
+    <hr>
+
+    <h5>Şagird Məlumatı</h5>
+    <p><strong>Nömrə:</strong> {{ student.studentNumber }}</p>
+    <p><strong>Ad:</strong> {{ student.firstName }}</p>
+    <p><strong>Soyad:</strong> {{ student.lastName }}</p>
+    <p><strong>Sinif:</strong> {{ student.classNumber }}</p>
+
+    <hr>
+
+    <h5>İmtahan Məlumatı</h5>
+    <p><strong>Dərs Kodu:</strong> {{ exam.lessonCode }}</p>
+    <p><strong>Şagird:</strong> {{ exam.studentNumber }}</p>
+    <p><strong>Tarix:</strong> {{ exam.examDate }}</p>
+    <p><strong>Qiymət:</strong> {{ exam.grade }}</p>
+
+  </div>
+
+  <div class="d-flex justify-content-end flex-row mb-5 mt-4">
+    <button class="btn btn-success" (click)="finish()">
+      Yekunlaşdır <i class="fa fa-check"></i>
+    </button>
+  </div>
+</div>

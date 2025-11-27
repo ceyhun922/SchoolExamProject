@@ -1,0 +1,26 @@
+<h2 class="mb-4">Şagirdlərin Siyahısı</h2>
+<a routerLink="/student/add" class="btn btn-primary my-3" >Elave Et</a>
+
+<table class="table table-bordered table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th>Şagird Nömrəsi</th>
+      <th>Ad</th>
+      <th>Soyadı</th>
+      <th>Sinif</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of students">
+      <td>{{ item.studentNumber }}</td>
+      <td>{{ item.firstName }}</td>
+      <td>{{ item.lastName }}</td>
+      <td>{{ item.classNumber }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="students.length === 0" class="alert alert-info mt-3">
+  Hələ şagird əlavə edilməyib...
+</div>

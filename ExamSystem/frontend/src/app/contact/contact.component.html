@@ -1,0 +1,38 @@
+<div class="mt-4">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" placeholder="Şagird Nömrəsi" [(ngModel)]="model.studentNumber">
+        <label>Şagird Nömrəsi</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Ad" [(ngModel)]="model.firstName">
+        <label>Ad</label>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Soyad" [(ngModel)]="model.lastName">
+        <label>Soyad</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" placeholder="Sinif" [(ngModel)]="model.classNumber">
+        <label>Sinif</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="d-flex justify-content-between mb-5 mt-4">
+  <button class="btn btn-secondary" (click)="stepper.goBack()">Geri</button>
+
+      <button class="btn btn-outline-primary" (click)="goNext(stepper)">
+
+    İmtahan Məlumatlarına Keç
+  </button>
+</div>

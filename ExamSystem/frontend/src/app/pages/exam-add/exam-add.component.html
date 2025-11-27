@@ -1,0 +1,107 @@
+<h2>İmtahan Əlavə Et</h2>
+
+<form (ngSubmit)="save(examForm)" #examForm="ngForm">
+
+  <div class="mt-4">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <select class="form-select"
+                    name="lessonId"
+                    required
+                    #lessonId="ngModel"
+                    [(ngModel)]="exam.lessonId">
+              <option value="">Dərs seç</option>
+              <option *ngFor="let l of lessons" [value]="l.id">
+                {{ l.lessonCode }} - {{ l.lessonName }}
+              </option>
+            </select>
+            <label>Dərs</label>
+          </div>
+
+          <div *ngIf="lessonId.invalid && lessonId.touched" class="text-danger small">
+            Dərs seçilməlidir.
+          </div>
+        </div>
+
+        <!-- STUDENT SELECT -->
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <select class="form-select"
+                    name="studentId"
+                    required
+                    #studentId="ngModel"
+                    [(ngModel)]="exam.studentId">
+              <option value="">Şagird seç</option>
+              <option *ngFor="let s of students" [value]="s.id">
+                {{ s.studentNumber }} - {{ s.firstName }} {{ s.lastName }}
+              </option>
+            </select>
+            <label>Şagird</label>
+          </div>
+
+          <div *ngIf="studentId.invalid && studentId.touched" class="text-danger small">
+            Şagird seçilməlidir.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-2">
+
+        <!-- EXAM DATE -->
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input type="date"
+                   class="form-control"
+                   name="examDate"
+                   required
+                   #examDate="ngModel"
+                   [(ngModel)]="exam.examDate">
+            <label>İmtahan Tarixi</label>
+          </div>
+
+          <div *ngIf="examDate.invalid && examDate.touched" class="text-danger small">
+            Tarix seçilməlidir.
+          </div>
+        </div>
+
+        <!-- GRADE -->
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input type="number"
+                   class="form-control"
+                   min="0"
+                   max="10"
+                   name="grade"
+                   required
+                   #grade="ngModel"
+                   [(ngModel)]="exam.grade">
+            <label>Qiymət</label>
+          </div>
+
+          <div *ngIf="grade.invalid && grade.touched" class="text-danger small">
+            Qiymət 0–10 arası olmalıdır.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-between mb-5 mt-4">
+      <button style="visibility:hidden"></button>
+
+      <button class="btn btn-outline-primary"
+              type="submit"
+             >
+        Əlavə Et
+      </button>
+    </div>
+
+  </div>
+
+</form>

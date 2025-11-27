@@ -1,0 +1,69 @@
+<div class="mt-4">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <select class="form-select"
+                  name="lessonId"
+                  [(ngModel)]="model.lessonId">
+            <option value="">Dərs seç</option>
+            <option *ngFor="let l of lessons" [value]="l.id">
+              {{ l.lessonCode }} - {{ l.lessonName }}
+            </option>
+          </select>
+          <label>Dərs</label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <select class="form-select"
+                  name="studentId"
+                  [(ngModel)]="model.studentId">
+            <option value="">Şagird seç</option>
+            <option *ngFor="let s of students" [value]="s.id">
+              {{ s.studentNumber }} - {{ s.firstName }} {{ s.lastName }}
+            </option>
+          </select>
+          <label>Şagird</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mt-2">
+
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input type="date"
+                 class="form-control"
+                 [(ngModel)]="model.examDate">
+          <label>İmtahan Tarixi</label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating mb-3">
+          <input type="number"
+                 class="form-control"
+                 min="0"
+                 max="10"
+                 [(ngModel)]="model.grade">
+          <label>Qiymət</label>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="d-flex justify-content-between mb-5 mt-4">
+    <button class="btn btn-secondary" (click)="stepper.goBack()">Geri</button>
+
+    <button class="btn btn-outline-primary" (click)="goNext(stepper)">
+      Tamamla
+    </button>
+  </div>
+</div>
